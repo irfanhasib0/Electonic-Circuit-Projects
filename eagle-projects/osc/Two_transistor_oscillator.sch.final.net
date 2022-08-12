@@ -1,0 +1,52 @@
+* SpiceNetList
+* 
+* Exported from Two_transistor_oscillator.sch at 2022/08/13 8:40
+* 
+* EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+* 
+.TEMP=25.0
+
+* --------- .OPTIONS ---------
+.OPTIONS ABSTOL=1e-12 GMIN=1e-12 PIVREL=1e-3 ITL1=100 ITL2=50 PIVTOL=1e-13 RELTOL=1e-3 VNTOL=1e-6 CHGTOL=1e-15 ITL4=10 METHOD=TRAP SRCSTEPS=0 TRTOL=7 NODE
+
+* --------- .PARAMS ---------
+
+* --------- devices ---------
+R_R3 VCQ2 VIN 3.3k 
+R_R2 0 N_1 10k 
+R_R1 N_1 VIN 10k 
+R_R6 VOUT VIN 1.5k 
+R_R4 0 N_3 4.7k 
+Q_Q2 VOUT VCQ2 N_4 2N2222A 
+V_V1 VIN 0 6V 
+C_C1 N_3 N_4 1.5n IC=1V 
+Q_Q1 VCQ2 N_1 N_3 2N2222A 
+R_R5 0 N_4 4.7k 
+
+* --------- models ---------
+
+* model file: /home/irfan/Desktop/eagle-projects/osc/2N2222A.mdl
+* from https://www.eevblog.com
+.model 2N2222A NPN(IS=1E-14 VAF=100 BF=200 IKF=0.3 XTB=1.5 BR=3 CJC=8E-12 CJE=25E-12 TR=100E-9 TF=400E-12 ITF=1 VTF=2 XTF=3 RB=10 RC=.3 RE=.2 Vceo=30)
+
+
+* --------- simulation ---------
+
+
+.control
+set filetype=ascii
+TRAN 2.00011e-8 0.02002 0.02 2.00011e-8  UIC 
+write Two_transistor_oscillator.sch.sim V(VCQ2) V(VOUT) V(VIN) I(V_V1)
+.endc
+
+.END
+
+
+
+
+
+
+
+
+
+

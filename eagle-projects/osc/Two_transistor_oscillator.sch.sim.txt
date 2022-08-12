@@ -1,0 +1,25 @@
+
+Circuit: * spicenetlist
+
+Warning: Model issue on line 30 : .model 2n2222a npn(is=1e-14 vaf=100 bf=200 ikf=0.3 xtb=1 ...
+  unrecognized parameter (vceo) - ignored
+Doing analysis at TEMP = 0.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vcq2                                         0
+vin                                          0
+n_1                                          0
+vout                                         0
+n_3                                          0
+n_4                                          0
+v_v1#branch                                  0
+
+
+
+No. of Data Rows : 1001
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
